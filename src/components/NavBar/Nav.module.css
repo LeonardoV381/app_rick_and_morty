@@ -1,0 +1,19 @@
+.barra{
+    background-color: black;
+    text-align: center;
+    width : 300px;
+    font-size: 28px;
+    color: greenyellow;
+    border-width: 15px;
+ }
+
+ .search{
+    height: 70px;
+    width: 150px;
+    border-radius: 20px;
+    display:center;
+    cursor : pointer;
+    color : greenyellow;
+    background-color: gray;
+    font-size:23px;
+ }
