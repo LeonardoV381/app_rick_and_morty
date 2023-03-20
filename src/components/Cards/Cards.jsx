@@ -7,8 +7,10 @@ export default function Cards(props) {
     return ( 
     <div className={styleCards.cards}>
         {characters.map(personajes =>
-          <Card key ={personajes.id}
+          <Card 
+          key ={personajes.id}
           onClose={()=> props.onClose(personajes.id)}
+          id={personajes.id}
           name={personajes.name}
           species={personajes.species}
           gender= {personajes.gender}

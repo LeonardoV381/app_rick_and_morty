@@ -1,9 +1,12 @@
 import './App.css'
-import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Cards from './components/Cards/Cards.jsx'   
 import fondo from './components/fondo.jpg'
 import Nav from './components/NavBar/Nav.jsx'
+import About from './components/About/About.jsx'
+import Detail from './components/Detail/Detail.jsx'
+import Form from './components/Form/Form.jsx'
 
 
  
@@ -16,7 +19,7 @@ const tapiz = {
 
 
 function App () {
-  
+  const location = useLocation();
   const [ characters, setCharacters] = useState([]);
 
   const onSearch = (character) =>{
@@ -32,6 +35,22 @@ function App () {
            data.name? setCharacters([...characters,data]):alert('Este personaje no se ha encontrado');  
          });
      }
+     const navigate = useNavigate();
+     const [ access, setAccess] = useState(false);
+     const username= "leonardo@henry.com";
+     const password="381Leo";
+
+     function login(userData){
+      if(userData.password === password && userData.username === username){
+        setAccess(true);
+        navigate('/home');
+      }
+     }
+
+     useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
    
      const onClose = (id) => {
       console.log(id)
@@ -40,22 +59,23 @@ function App () {
     
   }
   return(
+    <div>
     <div style={tapiz}>
      <div className='App' style={{ padding: '25px' }}>
-       <div>
-         <Nav onSearch ={onSearch}
-         />
-         <picture>
-                  <img src='https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/8/AmazonStores/A1AM78C64UM0Y8/88a9732d54ce1de3a48e9c09d2f58fed.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.jpg' alt='Rick and Morty IMG'/>
-         </picture>
-       </div>
-        <div>
-         <Cards 
-         characters= { characters } onClose= { onClose }
-         />
-        </div>
+    {location.pathname !== '/' &&
+      <Nav onSearch ={onSearch} /> }
+      
+      <Routes>
+         <Route path='/' element={ <Form login={login}/> } />
+         <Route path='/home' element={ <Cards characters= { characters } onClose= { onClose }/>} />
+         <Route path='/about' element={<About/>} />
+         <Route path='/detail/:detailId' element={<Detail/>} />
+      </Routes>
+      
+       
      </div>
      <h4 id='down'>_</h4>
+   </div>
    </div>
   )
 }

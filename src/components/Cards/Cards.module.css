@@ -2,16 +2,20 @@
    
     padding: 90px;
     font-size: 21px;
-    color : gold;
+    color : rgb(255, 145, 0);
     list-style: none;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-shadow: 3px 6px 5px rgb(96, 217, 77);
     text-decoration: dotted;
-    /* display: flex; */
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
-   -webkit-text-stroke-color: darkgreen;
-   -webkit-text-stroke-width: 1px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke-color: darkgreen;
+    -webkit-text-stroke-width: 1px;
    
  }  
+
+ .cards :hover{
+    background-color: rgb(23, 1, 1);
+    position: -ms-page;
+ }

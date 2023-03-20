@@ -1,13 +1,27 @@
 import SearchBar from "./SearchBar"
 import styled from 'styled-components'
+import styledNav from './Nav.module.css'
+import { NavLink} from 'react-router-dom'
 
 export default function Nav({onSearch}){
     return(
         <>
         <ContainerNav>
-            <ul className="listAbout">
-                <li>
-                    About
+            <ul className={styledNav.listAbout}>
+                <li className={styledNav.margin}>
+                <NavLink to='/home' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
+                 Home  
+                </NavLink>
+                </li>
+                <li className={styledNav.margin}>
+                <NavLink to='/about' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
+                 About
+                </NavLink>
+                </li>
+                <li className={styledNav.margin}>
+                <NavLink to='/detail' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
+                 Detail
+                </NavLink>
                 </li>
             </ul>
              <div>      
@@ -15,6 +29,7 @@ export default function Nav({onSearch}){
             </div>
 
         </ContainerNav>
+        <img className='mainImg' src='https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/8/AmazonStores/A1AM78C64UM0Y8/88a9732d54ce1de3a48e9c09d2f58fed.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.jpg' alt='Rick and Morty IMG'/>      
         </>
     )
 }

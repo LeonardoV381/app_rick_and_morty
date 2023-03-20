@@ -1,4 +1,7 @@
 .description {
-    font : 20px;
+    font-size : 45px;
     color : white;
+    -webkit-text-stroke-color: rgb(143, 19, 25);
+    -webkit-text-stroke-width: 2px;
+    
 }
