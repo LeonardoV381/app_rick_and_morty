@@ -2,14 +2,7 @@
    text-align: center;
 }
 
-#boton{
-   position: absolute;
-   margin: 20px 420px;
-   background-color:  red;
-   font-size: 30px;
-   text-align: center;
-   cursor : pointer;   
-}
+
 
 .imgP {
    border-radius :30px;

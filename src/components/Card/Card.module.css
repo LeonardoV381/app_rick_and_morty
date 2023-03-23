@@ -13,6 +13,7 @@
     margin : 20px 65px;
     display: inline-block;
     text-align: center;
+    box-shadow : 5px 5px 10px;
     background-color:  rgb(8, 0, 0);
  } 
  
@@ -34,3 +35,22 @@
       color: inherit;
       -webkit-text-stroke-color: darkgreen;
  }
+
+ .bFavorite {
+      position: absolute;
+      margin: 20px 360px;
+      font-size: 27px;
+      text-align: center;
+      cursor : pointer;   
+      box-shadow : 5px 5px 10px;
+ }
+
+ .boton{
+      position: absolute;
+      margin: 21px 420px;
+      background-color:  red;
+      font-size: 32px;
+      text-align: center;
+      cursor : pointer;   
+      box-shadow : 5px 5px 10px;
+   }
