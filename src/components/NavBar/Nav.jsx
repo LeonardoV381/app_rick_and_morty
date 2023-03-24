@@ -14,13 +14,18 @@ export default function Nav({onSearch}){
                 </NavLink>
                 </li>
                 <li className={styledNav.margin}>
-                <NavLink to='/about' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
-                 About
+                <NavLink to='/detail' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
+                 Detail
                 </NavLink>
                 </li>
                 <li className={styledNav.margin}>
-                <NavLink to='/detail' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
-                 Detail
+                <NavLink to='/favorites' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
+                 Favorites
+                </NavLink>
+                </li>
+                <li className={styledNav.margin}>
+                <NavLink to='/about' className={({isActive}) =>isActive ? styledNav.active : styledNav.disable}>
+                 About
                 </NavLink>
                 </li>
             </ul>

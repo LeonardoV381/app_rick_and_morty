@@ -4,16 +4,7 @@
 
 
 
-.imgP {
-   border-radius :30px;
-   border-style: inset;
-   border-color: rgb(126, 190, 29) rgb(125, 107, 7);
-   border-width: 10px;
-   margin: 0 50px;
-   height: 550px;
-   width: 400px;  
-   box-shadow : 30px 30px 80px;
-}
+
 
 #down {
    margin-top: 800px;

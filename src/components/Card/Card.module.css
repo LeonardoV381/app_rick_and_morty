@@ -5,7 +5,21 @@
     margin-bottom: 120px;
     
  }
- 
+ .imgP {
+     border-radius :30px;
+     border-style: inset;
+     border-color: rgb(126, 190, 29) rgb(125, 107, 7);
+     border-width: 10px;
+     margin: 0 50px;
+     height: 550px;
+     width: 400px;  
+     box-shadow : 30px 30px 80px;
+     
+  }
+  .imgP:hover{
+     color : white;
+     transition: 1s;
+  }
  
  .nombres{
    
@@ -15,7 +29,12 @@
     text-align: center;
     box-shadow : 5px 5px 10px;
     background-color:  rgb(8, 0, 0);
+    /* -webkit-transform:rotate(90deg) */
  } 
+ .nombres:hover{
+      color : red;
+      transition: 1s;
+ }
  
  .especie {
        position : absolute;
@@ -38,19 +57,28 @@
 
  .bFavorite {
       position: absolute;
-      margin: 20px 360px;
+      margin: 450px 400px;
       font-size: 27px;
       text-align: center;
       cursor : pointer;   
       box-shadow : 5px 5px 10px;
+      color : rgb(77, 222, 64);
+ }
+ .bFavorite:hover{
+     color : red;
+     transition: 1s;
  }
 
  .boton{
       position: absolute;
-      margin: 21px 420px;
+      margin: 500px 409px;
       background-color:  red;
       font-size: 32px;
       text-align: center;
       cursor : pointer;   
       box-shadow : 5px 5px 10px;
+   }
+.boton:hover{
+      color : blue;
+      transition: 1s;
    }

@@ -14,8 +14,3 @@
     -webkit-text-stroke-width: 1px;
    
  }  
-
- .cards :hover{
-    background-color: rgb(23, 1, 1);
-    position: -ms-page;
- }

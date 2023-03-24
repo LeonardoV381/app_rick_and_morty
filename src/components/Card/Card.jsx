@@ -1,37 +1,45 @@
-import styleCard from './Card.module.css'
-import { Link } from 'react-router-dom'
-import { addFavorite, deleteFavorite } from '../../redux/actions'
-import { connect } from 'react-redux'
-import { useState } from 'react'
+import styleCard from './Card.module.css';
+import { Link } from 'react-router-dom';
+import { addFavorite, deleteFavorite } from '../../redux/actions';
+import { connect, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
 
-function Card(props) { //deja de ser export default por el connect de abajo
-
-   let [isFav, setIsFav ] = useState(false);
-
+function Card( {onClose, id, name, species, gender,image, myFavorites }) { //deja de ser export default por el connect de abajo
+   const dispatch = useDispatch();
+   const [isFav, setIsFav ] = useState(false);
    const handleFavorite = () => {
       if(isFav){
          setIsFav(false);
-         deleteFavorite(props.id);
+         dispatch(deleteFavorite(id));
       }
-      else
+      else{
          setIsFav(true)
-         addFavorite(props)
-
+         dispatch(addFavorite({id:id,name:name,species:species,gender:gender,image:image}))
+      }
 
    }
+
+   useEffect(() => {
+      myFavorites.forEach((fav) => {
+         if (fav.id === id) {
+            setIsFav(true);
+         }
+      });
+   }, [myFavorites]);
+
    return (
       
       <div className={styleCard.content} >
       {
        isFav ? (<button className={styleCard.bFavorite} onClick={handleFavorite}>❤️</button>) : (<button className={styleCard.bFavorite} onClick={handleFavorite}>🤍</button>)
        }
-         <button className={styleCard.boton}  onClick={props.onClose}>X</button>
-         <Link to={`/detail/${props.id}`} className={styleCard.link}>
-         <h2 className={styleCard.nombres} key={props.id}>{props.name}</h2>
+         <button className={styleCard.boton}  onClick={onClose}>X</button>
+         <Link to={`/detail/${id}`} className={styleCard.link}>
+         <h2 className={styleCard.nombres} key={id}>{name}</h2>
          </Link>
-         <h2 className={styleCard.especie} key={props.id}>Specie:{props.species}</h2>
-         <h2 className={styleCard.genero} key={props.id}>Gender:{props.gender}</h2>
-         <img  className='imgP' key={props.id}  src={props.image} alt="Picture not found" />
+         <h2 className={styleCard.especie} key={id}>Specie:{species}</h2>
+         <h2 className={styleCard.genero} key={id}>Gender:{gender}</h2>
+         <img  className={styleCard.imgP} key={id}  src={image} alt="Picture not found" />
       </div>
    )}
 
@@ -41,7 +49,13 @@ function Card(props) { //deja de ser export default por el connect de abajo
           deleteFavorite : (id) => {dispatch(deleteFavorite(id))}
       }
    }
+
+   const mapStateToProps = (state) => {
+      return{
+         myFavorites : state.myFavorites,
+      }
+   }
    
 
 
-export default connect(null, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

@@ -7,9 +7,9 @@ export const addFavorite = (character) => {
     }
 }
 
-export const deleteFavorite = (character) => {
+export const deleteFavorite = (id) => {
     return{
         type : DELETE_FAVORITE,
-        payload: character.id
+        payload: id
     }
 }

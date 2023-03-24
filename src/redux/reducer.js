@@ -15,6 +15,7 @@ const reducer = (state = initialState, { type, payload }) => {
         case DELETE_FAVORITE:
             const filtrado = state.myFavorites.filter((personaje) => 
                 personaje.id !== payload);    
+                console.log(payload)
              return{
                 ...state,
                 myFavorites : filtrado
