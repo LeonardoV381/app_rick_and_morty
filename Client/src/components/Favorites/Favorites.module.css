@@ -1,0 +1,17 @@
+.boton{
+    font-size: 60px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow : 30px 30px 80px;
+    background-color: green;
+    height: 120px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 300px;
+    margin-bottom: 15px;
+    
+}
+.boton:hover{
+    color: green;
+    background-color: gold;
+    transition: .7s;
+}
