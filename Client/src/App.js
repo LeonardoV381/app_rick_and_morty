@@ -26,13 +26,13 @@ function App () {
       .then((response) => response.json())
       .then((data) => {
          for (let i = 0; i < characters.length; i++) {
-          if(data[0].id === characters[i].id){
-            return(alert("El personaje con id " +data[0].id + " ya está en pantalla este personaje es: " +characters[i].name))
+          if(data.id === characters[i].id){
+            return(alert("El personaje con id " +data.id + " ya está en pantalla este personaje es: " +characters[i].name))
           }
          }    
           
-         data[0].name? setCharacters([...characters, data[0]]):alert('Este personaje no se ha encontrado');  
-         console.log( new Date());
+         data.name? setCharacters([...characters, data]):alert('Este personaje no se ha encontrado');  
+         console.log(data);
            
          });
      }
